@@ -1,1 +1,0 @@
-console.log(document.getElementsByClassName('btn-block').0)
