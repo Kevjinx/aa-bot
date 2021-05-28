@@ -1,5 +1,6 @@
 const {Builder, By, Key, until} = require('selenium-webdriver');
 require('dotenv').config();
+const cssSelectorCheckinBtn = '.student-check-in-form button'
 
 
 const checkin = async () => {
@@ -8,11 +9,11 @@ const checkin = async () => {
     await driver.findElement(By.className('button')).click();
     await driver.findElement(By.id('login_field')).sendKeys(process.env.user)
     await driver.findElement(By.id('password')).sendKeys(process.env.pass, Key.RETURN)
+
     try {
-      await driver.findElement(By.className('checkin')).click();
-    } catch(err) {
-      alert('BRUH, check in!')
-      console.log(err);
+      await driver.findElement(By.cssSelector(cssSelectorCheckinBtn)).click()
+    } catch(err){
+
     }
 
 }
@@ -39,4 +40,5 @@ const intervalCheckin = () => {
   }, 100000);
 }
 
-intervalCheckin();
+
+checkin()
