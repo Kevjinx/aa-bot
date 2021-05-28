@@ -40,5 +40,4 @@ const intervalCheckin = () => {
   }, 100000);
 }
 
-
-checkin()
+intervalCheckin();
